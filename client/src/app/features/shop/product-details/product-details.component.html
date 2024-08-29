@@ -1,0 +1,36 @@
+@if (product) {
+    <section class="py-8">
+        <div class="max-w-screen-2xl px-4 mx-auto">
+            <div class="grid grid-cols-2 gap-8">
+                <!-- Left column for image -->
+                <div class="max-w-xl mx-auto">
+                    <img src="{{product.pictureUrl}}" alt="{{product.name}}" class="w-full h-auto">
+                </div>
+                
+                <!-- Right column for product details -->
+                <div class="flex flex-col">
+                    <h1 class="text-2xl font-semibold text-gray-900 mb-4">{{product.name}}</h1>
+                    <p class="text-3xl font-extrabold text-gray-900 mb-4">{{product.price | currency}}</p>
+                    
+                    <p class="text-gray-600 mb-6">{{product.description}}</p>
+                    
+                    <div class="flex items-center gap-4 mb-6">
+                        <button [disabled]="quantity === quantityIncart" 
+                        (click)="updateCart()"
+                        mat-flat-button class="match-input-height">
+                        <mat-icon>add_shopping_cart</mat-icon>
+                        {{getButtonText()}}
+                        </button>
+
+                        <mat-form-field appearance="outline" class="quantity-field">
+                            <mat-label>Quantity</mat-label>
+                            <input matInput type="number" min="0" [(ngModel)]="quantity">
+                        </mat-form-field>
+                    </div>
+                    
+                    <p class="text-sm text-gray-600">You have {{quantityIncart}} of this item in your cart</p>
+                </div>
+            </div>
+        </div>
+    </section>
+}
