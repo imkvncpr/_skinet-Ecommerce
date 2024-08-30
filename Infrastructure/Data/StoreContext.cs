@@ -1,4 +1,3 @@
-
 using Core.Entites;
 using Microsoft.EntityFrameworkCore;
 

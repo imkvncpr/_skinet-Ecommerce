@@ -1,13 +1,13 @@
 import {nanoid} from 'nanoid';
 
-export interface ICart {
+export type ICart = {
     id: string;
     items: ICartItem[];
 }
 
-export interface ICartItem {
+export type ICartItem = {
     productId: number;
-    productName: string;
+    productName: string; 
     price: number;
     quantity: number;
     pictureUrl: string;
@@ -18,4 +18,4 @@ export interface ICartItem {
 export class Cart implements ICart {
     id = nanoid();
     items: ICartItem[] = [];
-}
+}   

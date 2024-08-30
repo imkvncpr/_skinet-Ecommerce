@@ -1,9 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./layout/header/header.component";
-import { HttpClient } from '@angular/common/http';
-import { IProduct } from './shared/models/IProduct';
-import { ShopService } from './core/services/shop.service';
 import { ShopComponent } from "./features/shop/shop.component";
 
 @Component({
